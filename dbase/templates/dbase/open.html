@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Dbase</title>
+</head>
+<body class="d-flex flex-column h-100">
+	<header>
+		<div class="navbar navbar-light bg-light">
+			<span class="navbar-text mx-auto">
+				<h3>Таблица</h>
+				</span>
+			</div>
+		</header>
+		<br>
+		<div class="container ">
+			
+			<table class="table table-striped ">
+				<thead >
+					<tr>
+						<th>№</th>
+						<th>Текст</th>
+						<th>Дата публикации</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for base in dbase %}
+					<tr>
+						<td>{{ base.id_id }}</td>
+						<td>{{ base.text }}</td>
+						<td>{{ base.data| date:'d.m.Y H:i:s' }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			
+		</div>
+		<br>
+		<footer class="footer mt-auto py-3 bg-light">
+			<div class="container">
+				<p class='text-center'>Конец таблицы.</p>
+			</div>
+		</footer>
+
+
+	</body>
+	</html>
+
